@@ -3,6 +3,7 @@
 	<head>
 		<meta charset="ISO-8859-1">
 		<link rel="stylesheet" href="css/style.css">
+        <script src="js/scripts.js"></script>
 		<title>SAH - Sistema de Ajuste de Horas</title>
 	</head>
 	<body>
@@ -11,16 +12,14 @@
 		</div>
 		
 		<div>
-			<p>			
-				<h2>Digite e-mail para acessar o Sistema de Ajuste de Ponto</h2>
-				<form action="Home.html">
-					Usuário: <br/>
-					<input type="text" id="usuario"> <br/>
-					Senha: <br/>
-					<input type="password" id="senha"> <br/>
-					<input type="submit" value="Entrar" id="entrar">
-				</form>
-			</p>
+			<h2>Digite e-mail para acessar o Sistema de Ajuste de Ponto</h2>
+			<form name="login" action="Home.html">
+				E-mail: <br/>
+				<input type="text" name="email"> <br/>
+				Senha: <br/>
+				<input type="password" name="senha"> <br/>
+				<input type="submit" value="Entrar" id="entrar" onclick="validarUsuarioSenha(document.login)">
+			</form>
 					
 			<p><a href="signUp.html">Ainda não sou cadastrado</a></p>
 			<p><a href="home.html">Esqueceu a senha?</a></p>
