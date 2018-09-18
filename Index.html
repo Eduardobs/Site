@@ -1,32 +1,53 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-	<head>
-		<meta charset="ISO-8859-1">
+<head>
+    <meta charset="ISO-8859-1">
 
-		<link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style.css">
 
-        <script src="js/scripts.js"></script>
+    <script src="js/scripts.js"></script>
 
-		<title>SAH - Sistema de Ajuste de Horas</title>
-	</head>
-	<body>
-		<div>
-			<img src="images/home/u4.png" id="logo" alt="Logo" height="170" width="801">
-		</div>     
-		
-		<div>
-			<h2>Digite e-mail para acessar o Sistema de Ajuste de Ponto</h2>
-			<form name="login" action="Home.html" onsubmit="return validarUsuarioSenha(document.forms["login"])" method="post">
-				E-mail: <br/>
-				<input type="text" name="email"> <br/>
-				Senha: <br/>
-				<input type="password" name="senha"> <br/>
+    <title>SAH - Sistema de Ajuste de Horas</title>
+</head>
+<body>
+    <div>
+        <img src="images/home/u4.png" id="logo" alt="Logo" height="170" width="801">
+    </div>
 
-				<input type="submit" value="Entrar" name="entrar">
-			</form>
-					
-			<p><a href="signUp.html">Ainda não sou cadastrado</a></p>
-			<p><a href="home.html">Esqueceu a senha?</a></p>
-		</div>
-	</body>
+    <script>
+        function validarEmailSenha() {
+            var x = document.forms["login"]["email"].value;
+            if (x == "") {
+                alert("E-mail não informado!");
+                return false;
+            }
+
+            if (!(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(x))) {
+                alert("E-mail inválido");
+                return false;
+            }
+
+            x = document.forms["login"]["senha"].value;
+            if (x == "") {
+                alert("Senha não informada!");
+                return false;
+            } else { return true; }
+        }
+    </script>
+
+    <div>
+        <h2>Digite e-mail para acessar o Sistema de Ajuste de Ponto</h2>
+        <form name="login" action="Home.html" onsubmit="return validarEmailSenha()" method="post">
+            E-mail: <br />
+            <input type="text" name="email"> <br />
+            Senha: <br />
+            <input type="password" name="senha"> <br />
+
+            <input type="submit" value="Entrar" name="entrar">
+        </form>
+
+        <p><a href="signUp.html">Ainda não sou cadastrado</a></p>
+        <p><a href="home.html">Esqueceu a senha?</a></p>
+    </div>
+</body>
 </html>
